@@ -1,62 +1,167 @@
+@import 
+
+url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box
+}
+
 body {
-    @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap');
+    
     font-family: "League Spartan", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
-    background-color: #f4f4f4;
+    background-image: url('./wesley-ford-biBRoGc7ir0-unsplash.jpg'), linear-gradient(75deg, rgba(0, 18, 122, 0.747) 20%, rgba(11,150,141,1) 50%, rgba(141,0,255,1) 100%);
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-blend-mode: overlay; 
     margin: 0;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
+    padding: 0; 
+    height: 100vh; 
 }
 
-.container {
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 2000px;
+
+#navbar {
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+#logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+#navLinks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+#navLinks li {
+    margin-left: 20px; /* Adjust spacing between links */
+}
+
+#navLinks a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+
+#app {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the items horizontally */
-}
-
-#codeInput {
-    width: 1500px;
-    height: 300px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-family: monospace;
-    font-size: 14px;
-}
-
-#summarizeBtn {
-    padding: 10px 20px;
-    width: 300px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14pt;
-}
-
-#summaryOutput {
-    margin-top: 20px;
-    padding: 10px;
-    background-color: #e9ecef;
-    border-radius: 4px;
-    font-family: monospace;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     width: 100%;
-    box-sizing: border-box;
+    text-align: center; /* Center-align text within the container */
+}
+
+#textBoxWrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+/* Style for both text areas */
+textarea {
+    width: 100%; /* Adjust to fit within the container */
+    max-width: 900px; /* Maximum width for large screens */
+    height: 350px; /* Height of the text areas */
+    padding: 10px; /* Padding inside the text areas */
+    border: 1px solid #ccc; /* Light grey border */
+    /* border-radius: 5px; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    font-size: 1rem; /* Font size inside the text area */
+    resize: vertical; /* Allow resizing only vertically */
+    margin-bottom: 1rem; /* Space below the text areas */
+    text-decoration: none;    
+}
+
+/* Specific styling for the output box */
+textarea#outputBox {
+    background-color: #f9f9f9; /* Light grey background for the output box */
+    color: #333; /* Dark grey text color */
+}
+
+/* Placeholder styling for better visibility */
+textarea::placeholder {
+    color: #888; /* Light grey placeholder text */
+    font-style: italic; /* Italicize placeholder text */
+}
+
+#submitButton {
+    padding: 10px 25px; /* Padding inside the button */
+    width: 500px;
+    margin-top: 30px;
+    font-size: 20px; /* Font size of the button text */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #007bff; /* Primary color */
+    color: white; /* Text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth background color transition */
+}
+
+/* Hover effect for the button */
+#submitButton:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Focus effect for accessibility */
+#submitButton:focus {
+    outline: 2px solid #0056b3; /* Outline to indicate focus */
+    outline-offset: 2px; /* Offset the outline a bit */
 }
 
 
-#summarizeBtn:hover{
-    background-color: red;
+#welcomeMessage {
+    font-size: 60px;
     color: white;
+    font-family: "League Spartan", sans-serif;
+    font-weight: bolder;
+    margin: 20px 0;
+    text-align: center;
+    height: 100px; /* Adjust based on font size to avoid layout shifts */
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+#typewriter {
+    display: inline-block;
+    border-right: 2px solid #333;
+    padding-right: 2px;
+    animation: typewriter 4s steps(30, end) 1s 1 normal both,
+               blinkTextCursor 500ms steps(30, start) infinite normal;
+}
+
+@keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blinkTextCursor {
+    from { border-right-color: #333; }
+    to { border-right-color: transparent; }
 }

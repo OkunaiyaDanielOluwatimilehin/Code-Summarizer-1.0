@@ -5,15 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code Summarizer</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Code Summarizer 1.0</h1>
-        <textarea id="codeInput" placeholder="Enter your code here..."></textarea>
-        <button id="summarizeBtn">Summarize Code</button>
-        <div id="summaryOutput"></div>
-    </div>
-    <script src="script.js"></script>
-    <script src="api.js"></script>
+    <nav id="navbar">
+        <h1 id="logo">Code Summarizer</h1>
+        <ul id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+    </nav>
+   
+    <div id="app"> 
+        <div id="welcomeMessage">
+            <span id="typewriter"></span>
+        </div>
+    
+        
+               <div id="textBoxWrapper">
+                    <textarea id="inputBox" placeholder="Enter your code here..."></textarea>
+                    <textarea id="outputBox" placeholder="Summary will appear here..." readonly></textarea>
+                </div>
+                <button id="submitButton">Summarize</button>
+            </div>
+    
+   
+    
+    
 </body>
 </html>
